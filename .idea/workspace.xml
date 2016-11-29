@@ -2,6 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a227f20-7fab-4e02-8101-746836a3dff4" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/1248492f-1260-4a6f-9e19-0e6d2ffba33a.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/1248492f-1260-4a6f-9e19-0e6d2ffba33a/storage.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/bc18d5b2-0093-4ff6-90b1-4d87f59b5be0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/bc18d5b2-0093-4ff6-90b1-4d87f59b5be0/storage.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Bomon.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Detai.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Giangvien.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/KhoaController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Huongnghiencuu.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Khoa.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Khoahoc.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Linhvuc.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Nganhhoc.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Phongtn.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Sinhvien.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Vanphongkhoa.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,8 +59,8 @@
       <file leaf-file-name="Khoa.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Khoa.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+            <state relative-caret-position="340">
+              <caret line="20" column="42" lean-forward="false" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -291,7 +308,7 @@
       <updated>1480353595478</updated>
       <workItem from="1480353596748" duration="1337000" />
       <workItem from="1480411481469" duration="692000" />
-      <workItem from="1480423899292" duration="3688000" />
+      <workItem from="1480423899292" duration="4545000" />
     </task>
     <task id="LOCAL-00001" summary="Tạo trang ADMIN và khởi tạo model&#10;">
       <created>1480427558203</created>
@@ -300,11 +317,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480427558203</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Tạo trang ADMIN và khởi tạo model&#10;">
+      <created>1480427673003</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1480427673003</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5717000" />
+    <option name="totallyTimeSpent" value="6574000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1378" height="754" extended-state="0" />
@@ -344,7 +368,15 @@
     <option name="LAST_COMMIT_MESSAGE" value="Tạo trang ADMIN và khởi tạo model&#10;" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Khoa.php</url>
+          <line>15</line>
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -490,8 +522,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Khoa.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+        <state relative-caret-position="340">
+          <caret line="20" column="42" lean-forward="false" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
           <folding />
         </state>
       </provider>

@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="laravel_demo@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="laravel_demo">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="abc"/>
+    <schema id="4" parent="1" name="classicmodels"/>
+    <schema id="5" parent="1" name="information_schema"/>
+    <schema id="6" parent="1" name="laravel_quizlet"/>
+    <schema id="7" parent="1" name="mydb"/>
+    <schema id="8" parent="1" name="mysql"/>
+    <schema id="9" parent="1" name="my_classicmodels"/>
+    <schema id="10" parent="1" name="performance_schema"/>
+    <schema id="11" parent="1" name="phpmyadmin"/>
+    <schema id="12" parent="1" name="test"/>
+    <schema id="13" parent="1" name="web"/>
+    <schema id="14" parent="1" name="webphp"/>
+    <schema id="15" parent="1" name="webproduct"/>
+    <schema id="16" parent="1" name="webstudy"/>
+    <table id="17" parent="2" name="comment"/>
+    <table id="18" parent="2" name="loaitin"/>
+    <table id="19" parent="2" name="migrations"/>
+    <table id="20" parent="2" name="password_resets"/>
+    <table id="21" parent="2" name="slide"/>
+    <table id="22" parent="2" name="theloai"/>
+    <table id="23" parent="2" name="tintuc"/>
+    <table id="24" parent="2" name="users"/>
+    <column id="25" parent="17" name="id">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="26" parent="17" name="idUser">
+      <Position>2</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="17" name="idTinTuc">
+      <Position>3</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="17" name="NoiDung">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="17" name="created_at">
+      <Position>5</Position>
+      <DataType>timestamp|0</DataType>
+    </column>
+    <column id="30" parent="17" name="updated_at">
+      <Position>6</Position>
+      <DataType>timestamp|0</DataType>
+    </column>
+    <index id="31" parent="17" name="comment_idtintuc_foreign">
+      <ColNames>idTinTuc</ColNames>
+    </index>
+    <index id="32" parent="17" name="comment_iduser_foreign">
+      <ColNames>idUser</ColNames>
+    </index>
+    <key id="33" parent="17" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="34" parent="17" name="comment_iduser_foreign">
+      <ColNames>idUser</ColNames>
+      <RefSchemaName>laravel_demo</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnUpdate>update</OnUpdate>
+      <OnDelete>delete</OnDelete>
+    </foreign-key>
+    <foreign-key id="35" parent="17" name="comment_idtintuc_foreign">
+      <ColNames>idTinTuc</ColNames>
+      <RefSchemaName>laravel_demo</RefSchemaName>
+      <RefTableName>tintuc</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnUpdate>update</OnUpdate>
+      <OnDelete>delete</OnDelete>
+    </foreign-key>
+    <column id="36" parent="18" name="id">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="37" parent="18" name="idTheLoai">
+      <Position>2</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="38" parent="18" name="Ten">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="39" parent="18" name="TenKhongDau">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="40" parent="18" name="created_at">
+      <Position>5</Position>
+      <DataType>timestamp|0</DataType>
+    </column>
+    <column id="41" parent="18" name="updated_at">
+      <Position>6</Position>
+      <DataType>timestamp|0</DataType>
+    </column>
+    <index id="42" parent="18" name="loaitin_idtheloai_foreign">
+      <ColNames>idTheLoai</ColNames>
+    </index>
+    <key id="43" parent="18" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="44" parent="18" name="loaitin_idtheloai_foreign">
+      <ColNames>idTheLoai</ColNames>
+      <RefSchemaName>laravel_demo</RefSchemaName>
+      <RefTableName>theloai</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="45" parent="19" name="migration">
+      <Position>1</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="46" parent="19" name="batch">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="20" name="email">
+      <Position>1</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="20" name="token">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="20" name="created_at">
+      <Position>3</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <index id="50" parent="20" name="password_resets_email_index">
+      <ColNames>email</ColNames>
+    </index>
+    <index id="51" parent="20" name="password_resets_token_index">
+      <ColNames>token</ColNames>
+    </index>
+    <column id="52" parent="21" name="id">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="53" parent="21" name="Ten">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="54" parent="21" name="Hinh">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="55" parent="21" name="NoiDung">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="56" parent="21" name="link">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="57" parent="21" name="created_at">
+      <Position>6</Position>
+      <DataType>timestamp|0</DataType>
+    </column>
+    <column id="58" parent="21" name="updated_at">
+      <Position>7</Position>
+      <DataType>timestamp|0</DataType>
+    </column>
+    <key id="59" parent="21" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="60" parent="22" name="id">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="61" parent="22" name="Ten">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="62" parent="22" name="TenKhongDau">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="63" parent="22" name="created_at">
+      <Position>4</Position>
+      <DataType>timestamp|0</DataType>
+    </column>
+    <column id="64" parent="22" name="updated_at">
+      <Position>5</Position>
+      <DataType>timestamp|0</DataType>
+    </column>
+    <key id="65" parent="22" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="66" parent="23" name="id">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="67" parent="23" name="TieuDe">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="68" parent="23" name="TieuDeKhongDau">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="69" parent="23" name="TomTat">
+      <Position>4</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="70" parent="23" name="NoiDung">
+      <Position>5</Position>
+      <DataType>longtext|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="71" parent="23" name="Hinh">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="72" parent="23" name="NoiBat">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="73" parent="23" name="SoLuotXem">
+      <Position>8</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="74" parent="23" name="idLoaiTin">
+      <Position>9</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="75" parent="23" name="created_at">
+      <Position>10</Position>
+      <DataType>timestamp|0</DataType>
+    </column>
+    <column id="76" parent="23" name="updated_at">
+      <Position>11</Position>
+      <DataType>timestamp|0</DataType>
+    </column>
+    <index id="77" parent="23" name="tintuc_idloaitin_foreign">
+      <ColNames>idLoaiTin</ColNames>
+    </index>
+    <key id="78" parent="23" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="79" parent="23" name="tintuc_idloaitin_foreign">
+      <ColNames>idLoaiTin</ColNames>
+      <RefSchemaName>laravel_demo</RefSchemaName>
+      <RefTableName>loaitin</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="80" parent="24" name="id">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="81" parent="24" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="82" parent="24" name="email">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="83" parent="24" name="quyen">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="84" parent="24" name="password">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="85" parent="24" name="remember_token">
+      <Position>6</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="86" parent="24" name="created_at">
+      <Position>7</Position>
+      <DataType>timestamp|0</DataType>
+    </column>
+    <column id="87" parent="24" name="updated_at">
+      <Position>8</Position>
+      <DataType>timestamp|0</DataType>
+    </column>
+    <index id="88" parent="24" name="users_email_unique">
+      <ColNames>email</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="89" parent="24" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="90" parent="24" name="users_email_unique">
+      <ColNames>email</ColNames>
+      <UnderlyingIndexName>users_email_unique</UnderlyingIndexName>
+    </key>
+  </database-model>
+</dataSource>
