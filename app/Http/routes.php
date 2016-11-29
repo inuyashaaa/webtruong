@@ -18,3 +18,4 @@ Route::get('/', function () {
 Route::get('admin',function (){
    return view('admin/layout/index');
 });
+Route::get('admin/khoa','KhoaController@getDanhsachKhoa');

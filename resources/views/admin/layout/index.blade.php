@@ -10,9 +10,16 @@
 <div id="rightSide">
     @include('admin.layout.header')
     @yield('content')
+    @foreach($khoa as $kh)
+        {{$kh->name}}<br>
+        @foreach($kh->phongtn as $ptn)
+            {{$ptn->name}}<br>
+        @endforeach
+    @endforeach
     <div class="clear mt30"></div>
     @include('admin.layout.footer')
 </div>
 <div class="clear"></div>
+    @yield('script')
 </body>
 </html>

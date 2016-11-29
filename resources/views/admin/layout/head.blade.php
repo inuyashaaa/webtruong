@@ -1,6 +1,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<title>Uet-web</title>
+<title>@yield('title')</title>
 <meta name="robots" content="noindex, nofollow"/>
+<base href="{{asset("")}}">
 <link rel="shortcut icon" href="admin_asset/images/uet_logo.png" type="image/x-icon"/>
 <link rel="stylesheet" type="text/css" href="admin_asset/crown/css/main.css"/>
 <link rel="stylesheet" type="text/css" href="admin_asset/css/css.css" media="screen"/>
