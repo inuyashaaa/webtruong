@@ -8,6 +8,8 @@ class Bomon extends Model
 {
     protected $table = 'bo_mon';
 
+    protected $primaryKey = 'id_bo_mon';
+
     public function khoa()
     {
         return $this->belongsTo('App\Khoa', 'id_khoa', 'id_khoa');

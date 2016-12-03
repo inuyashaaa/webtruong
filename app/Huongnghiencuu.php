@@ -8,6 +8,8 @@ class Huongnghiencuu extends Model
 {
     protected $table = 'huong_nghien_cuu';
 
+    protected $primaryKey = 'id_huong_nghien_cuu';
+
     public function giangvien()
     {
         return $this->belongsTo('App\Giangvien', 'id_giang_vien', 'id_giang_vien');

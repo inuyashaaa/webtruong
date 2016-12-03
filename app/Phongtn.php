@@ -9,6 +9,7 @@ class Phongtn extends Model
     //Chọn bảng phòng thí nghiệm
     protected $table = 'phong_thi_nghiem';
 
+    protected $primaryKey = 'id_phong_thi_nghiem';
     //Tạo liên kết tới khoa
     public function khoa()
     {

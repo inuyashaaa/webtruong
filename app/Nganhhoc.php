@@ -8,6 +8,8 @@ class Nganhhoc extends Model
 {
     protected $table = 'nganh_hoc';
 
+    protected $primaryKey = 'id_nganh_hoc';
+
     public function khoa()
     {
         return $this->belongsTo('App\Khoa', 'id_khoa', 'id_khoa');

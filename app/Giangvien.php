@@ -8,6 +8,8 @@ class Giangvien extends Model
 {
     protected $table = 'giang_vien';
 
+    protected $primaryKey = 'id_giang_vien';
+
     public function bomon()
     {
         return $this->belongsTo('App\Bomon', 'id_bo_mon', 'id_bo_mon');

@@ -8,6 +8,7 @@ class Khoa extends Model
 {
     //Khai báo bảng mà Model truy xuất tới
     protected $table = 'khoa';
+    protected $primaryKey= 'id_khoa';
 
     //Tạo liên kết tới Model vpk
     public function vpk()

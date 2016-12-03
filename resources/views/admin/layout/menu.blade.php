@@ -12,27 +12,32 @@
         <!-- Left navigation -->
         <ul id="menu" class="nav">
             <li class="home">
-                <a href="admin/home.html" class="active" id="current">
+                <a href="#" class="active" id="current">
                     <span>Bảng điều khiển</span>
                     <strong></strong>
                 </a>
             </li>
             <li class="tran">
                 <a href="admin/tran.html" class=" exp">
-                    <span>Quản lý bán hàng</span>
-                    <strong>2</strong>
+                    <span>Quản lý đơn vị</span>
+                    <strong>4</strong>
                 </a>
                 <ul class="sub">
                     <li>
-                        <a href="admin/tran.html">
-                            Giao dịch </a>
+                        <a href="admin/khoa/danhsach"> Danh sách các khoa </a>
                     </li>
                     <li>
-                        <a href="admin/product_order.html">
-                            Đơn hàng sản phẩm </a>
+                        <a href="admin/bomon/danhsach">Danh sách các bộ môn</a>
+                    </li>
+                    <li>
+                        <a href="admin/phongtn/danhsach">Danh sách các PTN</a>
+                    </li>
+                    <li>
+                        <a href="admin/vpk/danhsach">Danh sách các VPK</a>
                     </li>
                 </ul>
             </li>
+
             <li class="product">
                 <a href="admin/product.html" class=" exp">
                     <span>Sản phẩm</span>

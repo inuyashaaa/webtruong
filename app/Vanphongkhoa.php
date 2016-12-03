@@ -8,6 +8,8 @@ class Vanphongkhoa extends Model
 {
     protected $table = "vpk";
 
+    protected $primaryKey = 'id_vpk';
+
     //Tạo liên kết tới khoa
     public function khoa()
     {

@@ -8,6 +8,8 @@ class Detai extends Model
 {
     protected $table = 'de_tai';
 
+    protected $primaryKey = 'id_de_tai';
+
     public function sinhvien()
     {
         return $this->belongsTo('App\Sinhvien', 'id_sv', 'id_sinh_vien');
