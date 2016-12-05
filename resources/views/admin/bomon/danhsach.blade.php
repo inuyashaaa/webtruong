@@ -44,7 +44,7 @@
                         <td style="width:80px;">Mã bộ môn</td>
                         <td>Tên</td>
                         <td>Khoa</td>
-                        <td>Hình ảnh</td>
+                        {{--<td>Hình ảnh</td>--}}
                         <td>Liên hệ</td>
                         <td style="width:100px;">Hành động</td>
                     </tr>
@@ -69,7 +69,7 @@
                             <td class="textC">{{$bm->id_bo_mon}}</td>
                             <td><span title="{{$bm->name}}" class="tipS">{{$bm->name}}</span></td>
                             <td><span title="{{$bm->khoa->name}}" class="tipS">{{$bm->khoa->name}}</span></td>
-                            <td><span title="{{$bm->hinh_anh}}" class="tipS"><img src="#" alt="{{$bm->hinh_anh}}"></span></td>
+                            {{--<td><span title="{{$bm->hinh_anh}}" class="tipS"><img src="#" alt="{{$bm->hinh_anh}}"></span></td>--}}
                             <td><span title="{{$bm->lien_he}}" class="tipS">{{$bm->lien_he}}</span></td>
                             <td class="option">
                                 <a href="admin/bomon/sua/{{$bm->id_bo_mon}}" title="Chỉnh sửa" class="tipS ">

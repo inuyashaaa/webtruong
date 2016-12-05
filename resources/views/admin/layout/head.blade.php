@@ -1,4 +1,5 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="shortcut icon" href="/sites/default/files/bluemarine_favicon.ico" type="image/x-icon" />
 <title>@yield('title')</title>
 <meta name="robots" content="noindex, nofollow"/>
 <base href="{{asset("")}}">

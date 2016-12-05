@@ -52,13 +52,13 @@
                             {{error_validate($errors)}}
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <div class="formRow">
-                                <label>Khoa:</label>
+                                <label class="formLeft" for="param_cat">Khoa:<span class="req">*</span></label>
                                 <div class="formRight">
-                                    <div class="selector" id="uniform-undefined"><span>Khoa</span>
-                                        <select name="id_khoa" style="opacity: 0;">
-                                            <option value="opt1"></option>>
-                                        </select>
-                                    </div>
+                                    <select name="id_khoa" _autocheck="true" id="param_cat" class="left">
+                                        @foreach($khoa as $kh)
+                                            <option value="{{$kh->id_khoa}}">{{$kh->name}}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <div class="clear"></div>
                             </div>
@@ -79,20 +79,30 @@
                             </div>
 
                             <div class="formRow">
-                                <label class="formLeft" for="param_sale">Tặng quà:</label>
+                                <label class="formLeft" for="param_sale">Mô tả:</label>
                                 <div class="formRight">
-                                    <span><textarea name="sale" id="param_sale" rows="4" cols=""></textarea></span>
+                                    <span><textarea name="mo_ta" id="demo" class="ckeditor"></textarea></span>
                                 </div>
                                 <div class="clear"></div>
                             </div>
 
                             <div class="formRow">
-                                <label class="formLeft" for="param_sale">Tặng quà:</label>
+                                <label class="formLeft">Hình ảnh:<span class="req">*</span></label>
                                 <div class="formRight">
-                                    <span><textarea id="demo" class="ckeditor"></textarea></span>
+                                    <div class="left"><input type="file" id="image" name="hinh_anh"></div>
+                                    <div name="image_error" class="clear error"></div>
                                 </div>
                                 <div class="clear"></div>
                             </div>
+
+                            <div class="formRow">
+                                <label class="formLeft" for="param_sale">Liên hệ:</label>
+                                <div class="formRight">
+                                    <span><textarea name="lien_he" id="param_sale" rows="4" cols=""></textarea></span>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+
                         </div>
                     </div>
                     <div class="formSubmit">

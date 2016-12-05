@@ -18,7 +18,7 @@
                 </a>
             </li>
             <li class="tran">
-                <a href="admin/tran.html" class=" exp">
+                <a href="#" class=" exp">
                     <span>Quản lý đơn vị</span>
                     <strong>4</strong>
                 </a>
@@ -39,42 +39,39 @@
             </li>
 
             <li class="product">
-                <a href="admin/product.html" class=" exp">
-                    <span>Sản phẩm</span>
+                <a href="#" class=" exp">
+                    <span>Quản lý giảng viên</span>
                     <strong>3</strong>
                 </a>
                 <ul class="sub">
                     <li>
-                        <a href="admin/product.html">
-                            Sản phẩm </a>
+                        <a href="admin/giangvien/danhsach">Danh sách giảng viên</a>
                     </li>
                     <li>
-                        <a href="admin/cat.html">
-                            Danh mục </a>
+                        <a href="admin/giangvien/themfile">Thêm giảng viên từ file Excel</a>
                     </li>
                     <li>
-                        <a href="admin/comment.html">
-                            Phản hồi </a>
+                        <a href="admin/cat.html">Tài khoản giảng viên đã kích hoạt</a>
+                    </li>
+                    <li>
+                        <a href="admin/comment.html">Tài khoản giảng viên chưa kích hoạt</a>
                     </li>
                 </ul>
             </li>
             <li class="account">
                 <a href="admin/account.html" class=" exp">
-                    <span>Tài khoản</span>
+                    <span>Quản lý đào tạo</span>
                     <strong>3</strong>
                 </a>
                 <ul class="sub">
                     <li>
-                        <a href="admin/admin.html">
-                            Ban quản trị </a>
+                        <a href="admin/admin.html">Danh sách các khóa học</a>
                     </li>
                     <li>
-                        <a href="admin/admin_group.html">
-                            Nhóm quản trị </a>
+                        <a href="admin/admin_group.html">Danh sách các chương trình đào tạo</a>
                     </li>
                     <li>
-                        <a href="admin/user.html">
-                            Thành viên </a>
+                        <a href="admin/user.html">Quản lý sinh viên</a>
                     </li>
                 </ul>
 

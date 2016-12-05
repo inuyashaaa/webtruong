@@ -7,6 +7,8 @@
         (function ($) {
             $(document).ready(function () {
                 var main = $('#form');
+
+                // Tabs
                 main.contentTabs();
             });
         })(jQuery);
@@ -14,18 +16,18 @@
     <div class="titleArea">
         <div class="wrapper">
             <div class="pageTitle">
-                <h5>Danh mục Văn phòng khoa</h5>
-                <span>Quản lý danh sách các Văn phòng khoa</span>
+                <h5>Danh mục Giảng viên</h5>
+                <span>Quản lý danh sách Giảng viên</span>
             </div>
             <div class="horControlB menu_action">
                 <ul>
                     <li>
-                        <a href="admin/vpk/them">
+                        <a href="admin/giangvien/them">
                             <img src="admin_asset/images/icons/control/16/add.png">
                             <span>Thêm mới</span>
                         </a></li>
                     <li>
-                        <a href="admin/vpk/danhsach">
+                        <a href="admin/giangvien/danhsach">
                             <img src="admin_asset/images/icons/control/16/list.png">
                             <span>Danh sách</span>
                         </a>
@@ -38,47 +40,25 @@
     <div class="line"></div>
 
     <div class="wrapper">
-        <form class="form" id="form" action="admin/vpk/them" method="post" enctype="multipart/form-data">
+        <form class="form" id="form" action="admin/giangvien/themfile" method="post" enctype="multipart/form-data">
             <fieldset>
                 <div class="widget">
                     <div class="title">
                         <img src="admin_asset/images/icons/dark/add.png" class="titleIcon">
-                        <h6>Thêm mới Văn phòng khoa</h6>
+                        <h6>Thêm mới giảng viên</h6>
                     </div>
                     <div class="tab_container">
                         <div id="tab1" class="tab_content pd0">
-                            {{error_validate($errors)}}
+                            {{message_success()}}
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
-                            <div class="formRow">
-                                <label class="formLeft" for="param_cat">Khoa:<span class="req">*</span></label>
-                                <div class="formRight">
-                                    <select name="id_khoa" _autocheck="true" id="param_cat" class="left">
-                                        @foreach($khoa as $kh)
-                                            <option value="{{$kh->id_khoa}}">{{$kh->name}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="clear"></div>
-                            </div>
-                            <div class="formRow">
-                                <label class="formLeft" for="param_name">Mã Văn phòng khoa:<span
-                                            class="req">*</span></label>
-                                <div class="formRight">
-                                    <span><input name="id_vpk" id="param_name" _autocheck="true"
-                                                 type="text"></span>
-                                </div>
-                                <div class="clear"></div>
-                            </div>
 
                             <div class="formRow">
-                                <label class="formLeft" for="param_name">Tên Văn phòng khoa:<span
-                                            class="req">*</span></label>
+                                <label class="formLeft">Chọn File:<span class="req">*</span></label>
                                 <div class="formRight">
-                                    <span><input name="name" id="param_name" _autocheck="true" type="text"></span>
+                                    <div class="left"><input type="file" id="image" name="file"></div>
                                 </div>
                                 <div class="clear"></div>
                             </div>
-
                         </div>
                     </div>
                     <div class="formSubmit">
