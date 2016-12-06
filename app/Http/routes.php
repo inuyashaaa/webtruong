@@ -76,6 +76,20 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('xoahet', 'GiangvienController@getXoahet');
     });
     /**
+     * Tạo route group quản lý các Sinh viên
+     */
+    Route::group(['prefix' => 'sinhvien'], function () {
+        Route::get('danhsach', 'SinhvienController@getDanhsach');
+        Route::get('them', 'SinhvienController@getThem');
+        Route::post('them', 'SinhvienController@postThem');
+        Route::get('themfile', 'SinhvienController@getThemfile');
+        Route::post('themfile', 'SinhvienController@postThemfile');
+        Route::get('sua/{id}', 'SinhvienController@getSua');
+        Route::post('sua/{id}', 'SinhvienController@postSua');
+        Route::get('xoa/{id}', 'SinhvienController@getXoa');
+        Route::get('xoahet', 'SinhvienController@getXoahet');
+    });
+    /**
      * Tạo route group quản lý các khóa học
      */
     Route::group(['prefix' => 'khoahoc'], function () {
