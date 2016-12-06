@@ -65,10 +65,10 @@
                 </a>
                 <ul class="sub">
                     <li>
-                        <a href="admin/admin.html">Danh sách các khóa học</a>
+                        <a href="admin/khoahoc/danhsach">Danh sách các khóa học</a>
                     </li>
                     <li>
-                        <a href="admin/admin_group.html">Danh sách các chương trình đào tạo</a>
+                        <a href="admin/nganhhoc/danhsach">Danh sách các chương trình đào tạo</a>
                     </li>
                     <li>
                         <a href="admin/user.html">Quản lý sinh viên</a>
