@@ -394,8 +394,9 @@ reserved_at</ColNames>
     </key>
     <column id="107" parent="25" name="id_khoa_hoc">
       <Position>1</Position>
-      <DataType>varchar(50)|0</DataType>
+      <DataType>int(50)|0</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="108" parent="25" name="name">
       <Position>2</Position>
@@ -451,8 +452,9 @@ reserved_at</ColNames>
     </column>
     <column id="119" parent="28" name="id_nganh_hoc">
       <Position>1</Position>
-      <DataType>varchar(50)|0</DataType>
+      <DataType>int(50)|0</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="120" parent="28" name="name">
       <Position>2</Position>
@@ -464,26 +466,23 @@ reserved_at</ColNames>
       <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="122" parent="28" name="id_khoa">
+    <column id="122" parent="28" name="ki_hieu">
       <Position>4</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="123" parent="28" name="nganhhoc_to_khoa_idx">
-      <ColNames>id_khoa</ColNames>
-    </index>
-    <key id="124" parent="28" name="PRIMARY">
+    <column id="123" parent="28" name="created_at">
+      <Position>5</Position>
+      <DataType>timestamp|0</DataType>
+    </column>
+    <column id="124" parent="28" name="updated_at">
+      <Position>6</Position>
+      <DataType>timestamp|0</DataType>
+    </column>
+    <key id="125" parent="28" name="PRIMARY">
       <ColNames>id_nganh_hoc</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="125" parent="28" name="nganhhoc_to_khoa">
-      <ColNames>id_khoa</ColNames>
-      <RefSchemaName>web_truong</RefSchemaName>
-      <RefTableName>khoa</RefTableName>
-      <RefColNames>id_khoa</RefColNames>
-      <OnUpdate>update</OnUpdate>
-      <OnDelete>no-action</OnDelete>
-    </foreign-key>
     <column id="126" parent="29" name="id_phong_thi_nghiem">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
@@ -544,11 +543,11 @@ reserved_at</ColNames>
     </column>
     <column id="138" parent="30" name="id_khoa_hoc">
       <Position>3</Position>
-      <DataType>varchar(50)|0</DataType>
+      <DataType>int(50)|0</DataType>
     </column>
     <column id="139" parent="30" name="id_nganh_hoc">
       <Position>4</Position>
-      <DataType>varchar(50)|0</DataType>
+      <DataType>int(11)|0</DataType>
     </column>
     <column id="140" parent="30" name="email">
       <Position>5</Position>
@@ -598,7 +597,7 @@ reserved_at</ColNames>
       <RefTableName>khoa_hoc</RefTableName>
       <RefColNames>id_khoa_hoc</RefColNames>
       <OnUpdate>update</OnUpdate>
-      <OnDelete>no-action</OnDelete>
+      <OnDelete>set-null</OnDelete>
     </foreign-key>
     <foreign-key id="151" parent="30" name="sv_to_nganhhoc">
       <ColNames>id_nganh_hoc</ColNames>
@@ -606,7 +605,7 @@ reserved_at</ColNames>
       <RefTableName>nganh_hoc</RefTableName>
       <RefColNames>id_nganh_hoc</RefColNames>
       <OnUpdate>update</OnUpdate>
-      <OnDelete>no-action</OnDelete>
+      <OnDelete>set-null</OnDelete>
     </foreign-key>
     <foreign-key id="152" parent="30" name="sv_to_khoa">
       <ColNames>id_khoa</ColNames>

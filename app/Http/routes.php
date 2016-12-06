@@ -86,4 +86,15 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('sua/{id}', 'KhoahocController@postSua');
         Route::get('xoa/{id}', 'KhoahocController@getXoa');
     });
+    /**
+     * Tạo route group quản lý các ngành học
+     */
+    Route::group(['prefix' => 'nganhhoc'], function () {
+        Route::get('danhsach', 'NganhhocController@getDanhsach');
+        Route::get('them', 'NganhhocController@getThem');
+        Route::post('them', 'NganhhocController@postThem');
+        Route::get('sua/{id}', 'NganhhocController@getSua');
+        Route::post('sua/{id}', 'NganhhocController@postSua');
+        Route::get('xoa/{id}', 'NganhhocController@getXoa');
+    });
 });
