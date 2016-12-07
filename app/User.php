@@ -30,4 +30,9 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Giangvien', 'id_user', 'id');
     }
+
+    public function sinhvien()
+    {
+        return $this->hasOne('App\Sinhvien', 'id_user', 'id');
+    }
 }

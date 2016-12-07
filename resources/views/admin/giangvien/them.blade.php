@@ -80,7 +80,7 @@
                             </div>
 
                             <div class="formRow">
-                                <label class="formLeft" for="param_cat">Bộ mốn:<span class="req">*</span></label>
+                                <label class="formLeft" for="param_cat">Bộ môn:<span class="req">*</span></label>
                                 <div class="formRight">
                                     <select style="width: 285px;" name="id_bo_mon" _autocheck="true" id="param_cat"
                                             class="left">

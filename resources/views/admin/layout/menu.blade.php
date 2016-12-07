@@ -51,10 +51,10 @@
                         <a href="admin/giangvien/themfile">Thêm giảng viên từ file Excel</a>
                     </li>
                     <li>
-                        <a href="admin/cat.html">Tài khoản giảng viên đã kích hoạt</a>
+                        <a href="#">Tài khoản giảng viên đã kích hoạt</a>
                     </li>
                     <li>
-                        <a href="admin/comment.html">Tài khoản giảng viên chưa kích hoạt</a>
+                        <a href="#">Tài khoản giảng viên chưa kích hoạt</a>
                     </li>
                 </ul>
             </li>
@@ -70,28 +70,22 @@
                     <li>
                         <a href="admin/nganhhoc/danhsach">Danh sách các chương trình đào tạo</a>
                     </li>
-                    <li>
-                        <a href="admin/user.html">Quản lý sinh viên</a>
-                    </li>
                 </ul>
 
             </li>
             <li class="support">
-
-                <a href="admin/support.html" class=" exp">
-                    <span>Hỗ trợ và liên hệ</span>
-                    <strong>2</strong>
+                <a href="#" class=" exp">
+                    <span>Quản lý sinh viên</span>
+                    <strong>4</strong>
                 </a>
-
                 <ul class="sub">
                     <li>
-                        <a href="admin/support.html">
-                            Hỗ trợ </a>
+                        <a href="admin/sinhvien/danhsach">Danh sách sinh viên</a>
                     </li>
                     <li>
-                        <a href="admin/contact.html">
-                            Liên hệ </a>
+                        <a href="admin/sinhvien/themfile">Thêm sinh viên từ file Excel</a>
                     </li>
+
                 </ul>
             </li>
             <li class="content">
