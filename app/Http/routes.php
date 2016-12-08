@@ -3,11 +3,13 @@
 Route::get('/', function () {
     return view('trangchu.layout.index');
 });
-Route::get('email', 'EmailController@sendMail');
-Route::post('dang-nhap', 'UserController@postDangnhap');
+// Route đăng nhâp, đăng xuất admin
+Route::get('admin', 'UserController@getAdminDangnhap');
+Route::post('admin', 'UserController@postAdminDangnhap');
+Route::get('admin/dangxuat', 'UserController@getAdminDangxuat');
 
 //Tạo route group admin
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => 'adminLogin'], function () {
     /**
      * Tạo route group quản lý khoa
      */
