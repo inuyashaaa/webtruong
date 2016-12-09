@@ -190,6 +190,12 @@ class GiangvienController extends Controller
 
     }
 
+    public function getTaikhoan()
+    {
+        $taikhoan = User::where('level', 2)->get();
+        return view('admin.giangvien.taikhoan', ['taikhoan' => $taikhoan]);
+    }
+
     public function getXoa($id)
     {
         $gv = Giangvien::find($id);
@@ -209,4 +215,26 @@ class GiangvienController extends Controller
         }
         return redirect('admin/giangvien/danhsach')->with('message', 'Xóa giảng viên thành công!');
     }
+
+    /**
+     * Thao tác với giảng viên trên trang chủ
+     */
+    public function getTCdanhsach()
+    {
+        $giangvien = Giangvien::all();
+        return view('trangchu.giangvien.danhsach', ['giangvien' => $giangvien]);
+    }
+
+    public function getThongtin($id)
+    {
+        $giangvien = Giangvien::find($id);
+        return view('trangchu.giangvien.thongtin', ['giangvien' => $giangvien]);
+    }
+
+    public function getProfile($id)
+    {
+        $giangvien = Giangvien::find($id);
+        return view('trangchu.giangvien.profile', ['giangvien' => $giangvien]);
+    }
+
 }

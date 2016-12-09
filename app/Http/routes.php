@@ -1,12 +1,21 @@
 <?php
 
 Route::get('/', function () {
-    return view('trangchu.layout.index');
+    return view('trangchu.trangchu');
 });
 // Route đăng nhâp, đăng xuất admin
 Route::get('admin', 'UserController@getAdminDangnhap');
 Route::post('admin', 'UserController@postAdminDangnhap');
 Route::get('admin/dangxuat', 'UserController@getAdminDangxuat');
+
+Route::post('dang-nhap', [
+    'as' => 'login',
+    'uses' => 'UserController@postDangnhap'
+]);
+Route::get('dang-xuat', [
+    'as' => 'logout',
+    'uses' => 'UserController@getDangxuat'
+]);
 
 //Tạo route group admin
 Route::group(['prefix' => 'admin', 'middleware' => 'adminLogin'], function () {
@@ -67,6 +76,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminLogin'], function () {
         Route::post('sua/{id}', 'GiangvienController@postSua');
         Route::get('xoa/{id}', 'GiangvienController@getXoa');
         Route::get('xoahet', 'GiangvienController@getXoahet');
+        Route::get('taikhoan', 'GiangvienController@getTaikhoan');
     });
     /**
      * Tạo route group quản lý các Sinh viên
@@ -104,4 +114,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminLogin'], function () {
         Route::post('sua/{id}', 'NganhhocController@postSua');
         Route::get('xoa/{id}', 'NganhhocController@getXoa');
     });
+});
+
+Route::group(['prefix' => 'giang-vien'], function () {
+    Route::get('danh-sach.html', 'GiangvienController@getTCdanhsach');
+    Route::get('thong-tin/{id}-{name}.html', 'GiangvienController@getThongtin');
+    Route::get('ho-so-ca-nhan-{id}.html', 'GiangvienController@getProfile');
+    Route::get('dang-ky-huong-ngien-cuu-{id}.html', 'GiangvienController@getDangkyHcn');
+    Route::post('dang-ky-huong-ngien-cuu-{id}.html', 'GiangvienController@postDangkyHcn');
 });

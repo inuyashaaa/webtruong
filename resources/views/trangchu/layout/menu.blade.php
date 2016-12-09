@@ -1,3 +1,19 @@
+<div class="row">
+    <div class="col s12">
+        <div class="card hoverable">
+            <div class="card-image">
+                <img src="images/menu-tuyensinh.png">
+                <span class="card-title"></span>
+            </div>
+            <div class="card-content">
+                <p>I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+                <a href="#">This is a link</a>
+            </div>
+        </div>
+    </div>
+</div>
 <ul class="collapsible" data-collapsible="accordion">
     <li>
         <div class="collapsible-header">First</div>

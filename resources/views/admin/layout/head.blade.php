@@ -1,8 +1,9 @@
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<link rel="shortcut icon" href="/sites/default/files/bluemarine_favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="/sites/default/files/bluemarine_favicon.ico" type="image/x-icon"/>
 <title>@yield('title')</title>
+<base href="{{asset('')}}">
 <meta name="robots" content="noindex, nofollow"/>
-<base href="{{asset("")}}">
 <link rel="shortcut icon" href="admin_asset/images/uet_logo.png" type="image/x-icon"/>
 <link rel="stylesheet" type="text/css" href="admin_asset/crown/css/main.css"/>
 <link rel="stylesheet" type="text/css" href="admin_asset/css/css.css" media="screen"/>

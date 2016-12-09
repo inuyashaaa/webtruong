@@ -1,4 +1,4 @@
-$( document ).ready(function(){
+$(document).ready(function () {
     $(".button-collapse").sideNav();
     $('.dropdown-button').dropdown({
             inDuration: 300,
@@ -27,3 +27,18 @@ $( document ).ready(function(){
     );
     Materialize.updateTextFields();
 });
+function getFormData(form) {
+    var data = form.serializeArray().reduce(function (obj, item) {
+        obj[item.name] = item.value;
+        return obj;
+    }, {});
+    return data;
+}
+
+function showValidation(rs) {
+    jQuery.each(rs, function () {
+        jQuery.each(this, function () {
+            toastr.error(this);
+        })
+    });
+}

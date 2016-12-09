@@ -94,4 +94,9 @@ function message_success()
     }
 }
 
+function isLogin()
+{
+    return \Illuminate\Support\Facades\Auth::user();
+}
+
 ?>

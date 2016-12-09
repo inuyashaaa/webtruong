@@ -5,14 +5,14 @@
         <div class="sideProfile">
             <a href="#" title="" class="profileFace"><img width="40" src="admin_asset/images/user.png"/></a>
             <span>Xin chào: <strong>admin!</strong></span>
-            <span>Phạm Huy Mạnh</span>
+            <span>UET_Web</span>
             <div class="clear"></div>
         </div>
         <div class="sidebarSep"></div>
         <!-- Left navigation -->
         <ul id="menu" class="nav">
             <li class="home">
-                <a href="#" class="active" id="current">
+                <a href="admin/khoa/danhsach" class="active" id="current">
                     <span>Bảng điều khiển</span>
                     <strong></strong>
                 </a>
@@ -51,10 +51,7 @@
                         <a href="admin/giangvien/themfile">Thêm giảng viên từ file Excel</a>
                     </li>
                     <li>
-                        <a href="#">Tài khoản giảng viên đã kích hoạt</a>
-                    </li>
-                    <li>
-                        <a href="#">Tài khoản giảng viên chưa kích hoạt</a>
+                        <a href="admin/giangvien/taikhoan">Danh sách tài khoản giảng viên</a>
                     </li>
                 </ul>
             </li>

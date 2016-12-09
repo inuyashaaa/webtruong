@@ -33,29 +33,11 @@
 
 <div class="container">
     <div class="row">
-        <div class="col l3 m3 s12">
-            @include('trangchu.layout.menu')
-        </div>
         <div class="col l9 m9 s12">
             @yield('content')
-            <nav style="margin-top: 10px;">
-                <div class="nav-wrapper light-blue lighten-1">
-                    <div class="col s12">
-                        <a href="#!" class="breadcrumb">First</a>
-                        <a href="#!" class="breadcrumb">Second</a>
-                        <a href="#!" class="breadcrumb">Third</a>
-                    </div>
-                </div>
-            </nav>
-            <div class="row">
-                <div class="col s12 m5">
-                    <div class="card-panel hoverable">
-                      <span class="black-text">I am a very simple card. I am good at containing small bits of information.
-                      I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-                      </span>
-                    </div>
-                </div>
-            </div>
+        </div>
+        <div class="col l3 m3 s12">
+            @include('trangchu.layout.menu')
         </div>
     </div>
 </div>
@@ -63,6 +45,35 @@
 <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
 <script type="text/javascript" src="js/materialize.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#login-form').submit(function (e) {
+            e.preventDefault();
+            var data = getFormData($(this));
+            data['_token'] = '{{csrf_token()}}';
+            $.ajax({
+                url: "{{route('login')}}",
+                method: "POST",
+                dataType: "json",
+                data: data,
+                success: function (rs) {
+                    toastr.success('Đăng Nhập thành công.');
+                    window.location = '/';
+                },
+                error: function (xhr) {
+                    if (xhr.status == 422) {
+                        var rs = xhr.responseJSON;
+                        showValidation(rs);
+                    } else {
+                        toastr.error('Sai tài khoản hoặc mật khẩu');
+                    }
+                }
+            })
+        });
+    });
+
+</script>
 @yield('script')
 </body>
 </html>

@@ -10,8 +10,8 @@ class AdminLoginMiddleware
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param  \Illuminate\Http\Request $request
+     * @param  \Closure $next
      * @return mixed
      */
     public function handle($request, Closure $next)
@@ -21,10 +21,10 @@ class AdminLoginMiddleware
             if ($user->level == 3) {
                 return $next($request);
             } else {
-                return redirect('/');
+                return redirect('admin')->with('message', 'Bạn không có quyền truy cập trang admin');
             }
         } else {
-            return redirect('/');
+            return redirect('admin')->with('message', 'Bạn chưa đăng nhập');
         }
     }
 }

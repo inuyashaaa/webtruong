@@ -9,6 +9,10 @@ main {
     flex: 1 0 auto;
 }
 
+p {
+    text-indent: 10px;
+}
+
 .container {
     width: 90%;
 }
@@ -70,4 +74,8 @@ main {
 /* icon prefix focus color */
 .input-field .prefix.active {
     color: #000;
+}
+
+.strong {
+    font-weight: bold;
 }
