@@ -30,7 +30,6 @@
     </div>
     <div class="divider"></div>
 </div>
-
 <div class="container">
     <div class="row">
         <div class="col l9 m9 s12">

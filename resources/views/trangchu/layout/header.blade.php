@@ -1,6 +1,6 @@
 <!-- Dropdown Structure -->
 <ul id="gioithieu" class="dropdown-content">
-    <li><a href="#">Các bộ môn và phòng thí nghệm</a></li>
+    <li><a href="cac-bo-mon-va-phong-thi-nghiem.html">Các bộ môn và phòng thí nghệm</a></li>
     <li class="divider"></li>
     <li><a href="giang-vien/danh-sach.html">Giảng viên</a></li>
 </ul>

@@ -5,7 +5,8 @@
             <div class="col s12">
                 <a href="/" class="breadcrumb">Trang chủ</a>
                 <a href="giang-vien/danh-sach.html" class="breadcrumb">Giảng viên</a>
-                <a href="giang-vien/thong-tin/{{$giangvien->id_giang_vien}}-{{$giangvien->name_khong_dau}}.html" class="breadcrumb">Thông tin giảng viên</a>
+                <a href="giang-vien/thong-tin/{{$giangvien->id_giang_vien}}-{{$giangvien->name_khong_dau}}.html"
+                   class="breadcrumb">Thông tin giảng viên</a>
             </div>
         </div>
     </nav>
@@ -34,7 +35,13 @@
                             ?></p>
                         <br>
                         <p class="strong">Hướng nghiên cứu</p>
-                        <p>{{$giangvien->name}}</p>
+                        @foreach($hnc as $row)
+                            @if($giangvien->id_giang_vien == $row->id_giang_vien)
+                                <p>
+                                    {{$row->name . "." }}
+                                </p>
+                            @endif
+                        @endforeach
                     </div>
                     <div class="col s6 center-align">
                         <img class="responsive-img" src="images/avata.png">

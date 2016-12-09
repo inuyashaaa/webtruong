@@ -1,5 +1,6 @@
 @extends('trangchu.layout.index')
 @section('content')
+
     <nav style="margin-top: 10px;">
         <div class="nav-wrapper light-blue lighten-1">
             <div class="col s12">

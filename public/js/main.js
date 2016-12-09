@@ -26,6 +26,7 @@ $(document).ready(function () {
         }
     );
     Materialize.updateTextFields();
+    $('select').material_select();
 });
 function getFormData(form) {
     var data = form.serializeArray().reduce(function (obj, item) {

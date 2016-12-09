@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Bomon;
 use App\Giangvien;
+use App\Huongnghiencuu;
 use App\Jobs\SendReminderEmail;
 use App\Khoa;
 use App\Phongtn;
@@ -117,18 +118,17 @@ class GiangvienController extends Controller
                 //Thêm id tài khoản và tạo mới giảng viên
                 $giangvien->id_user = $user->id;
                 $gvdt = Giangvien::find($giangvien->id_giang_vien);
-                if ($gvdt) {
-                    $gvdt->delete();
+                if (!$gvdt) {
+                    $us = User::find($user->id);
+                    if ($us) {
+                        $us->delete();
+                    }
+                    //Thiết lập gửi mail
+                    $user->save();
+                    $usersendMail = User::findOrFail($giangvien->id_giang_vien);
+                    $this->dispatch(new SendReminderEmail($usersendMail));
+                    Giangvien::firstOrCreate($giangvien->toArray());
                 }
-                $us = User::find($user->id);
-                if ($us) {
-                    $us->delete();
-                }
-                //Thiết lập gửi mail
-                $user->save();
-                $usersendMail = User::findOrFail($giangvien->id_giang_vien);
-                $this->dispatch(new SendReminderEmail($usersendMail));
-                Giangvien::firstOrCreate($giangvien->toArray());
             }
             return redirect('admin/giangvien/danhsach')->with('message', 'Thêm giảng viên thành công');
         } else {
@@ -222,19 +222,88 @@ class GiangvienController extends Controller
     public function getTCdanhsach()
     {
         $giangvien = Giangvien::all();
-        return view('trangchu.giangvien.danhsach', ['giangvien' => $giangvien]);
+        $hnc = Huongnghiencuu::all();
+        return view('trangchu.giangvien.danhsach', ['giangvien' => $giangvien, 'hnc' => $hnc]);
     }
 
     public function getThongtin($id)
     {
         $giangvien = Giangvien::find($id);
-        return view('trangchu.giangvien.thongtin', ['giangvien' => $giangvien]);
+        $hnc = Huongnghiencuu::all();
+        return view('trangchu.giangvien.thongtin', ['giangvien' => $giangvien, 'hnc' => $hnc]);
     }
 
     public function getProfile($id)
     {
         $giangvien = Giangvien::find($id);
-        return view('trangchu.giangvien.profile', ['giangvien' => $giangvien]);
+        $hnc = Huongnghiencuu::all();
+        return view('trangchu.giangvien.profile', ['giangvien' => $giangvien, 'hnc' => $hnc]);
     }
 
+    public function getDangkyHcn($id)
+    {
+        $giangvien = Giangvien::find($id);
+        return view('trangchu.giangvien.hnc', ['giangvien' => $giangvien]);
+    }
+
+    public function postDangkyHcn(Request $request, $id)
+    {
+        $this->validate($request,
+            [
+                'hnc' => 'bail|required|min:3'
+            ],
+            [
+                'hnc.required' => 'Tên hướng nghiên cứu không được để trống',
+                'hnc.min' => 'Tên phải có độ dài tối thiểu 3 ký tự'
+            ]
+        );
+        $hnc = new Huongnghiencuu();
+        $hnc->id_giang_vien = $request->id;
+        $hnc->name = $request->hnc;
+        $hnc->name_khong_dau = changeTitle($request->hnc);
+        $hnc->save();
+        return redirect("giang-vien/ho-so-ca-nhan-$id.html");
+    }
+
+    public function xoaHnc($id)
+    {
+        $hnc = Huongnghiencuu::find($id);
+        $id_gv = $hnc->id_giang_vien;
+        $hnc->delete();
+        return redirect("giang-vien/ho-so-ca-nhan-$id_gv.html");
+    }
+
+    public function getSuathongtin($id)
+    {
+        $giangvien = Giangvien::find($id);
+        $khoa = Khoa::all();
+        return view('trangchu.giangvien.suathongtin', ['giangvien' => $giangvien, 'khoa' => $khoa]);
+    }
+
+    public function postSuathongtin(Request $request, $id)
+    {
+        $this->validate($request,
+            [
+                'name' => 'required',
+                'email' => 'bail|required',
+            ],
+            [
+                'name.required' => 'Tên không được để trống',
+                'email.required' => 'Email không được để trống'
+            ]
+        );
+        $giangvien = Giangvien::find($id);
+        $giangvien->name = $request->name;
+        $giangvien->id_khoa = $request->id_khoa;
+        $giangvien->email = $request->email;
+        $giangvien->save();
+        $user = User::find($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        if ($request->password) {
+            $user->password = bcrypt($request->password);
+        }
+        $user->save();
+        return redirect("giang-vien/ho-so-ca-nhan-$id.html");
+    }
 }

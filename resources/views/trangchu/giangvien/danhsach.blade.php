@@ -11,7 +11,7 @@
     <div class="row">
         <div class="col s12">
             <div class="card-panel">
-                <table class="bordered highlight">
+                <table class="bordered highlight tabs-fixed-width">
                     <thead>
                     <tr>
                         <th data-field="id">Họ và Tên</th>
@@ -24,7 +24,9 @@
                     <tbody>
                     @foreach($giangvien as $gv)
                         <tr>
-                            <td><a href="giang-vien/thong-tin/{{$gv->id_giang_vien}}-{{$gv->name_khong_dau}}.html ">{{$gv->name}}</a></td>
+                            <td>
+                                <a href="giang-vien/thong-tin/{{$gv->id_giang_vien}}-{{$gv->name_khong_dau}}.html ">{{$gv->name}}</a>
+                            </td>
                             <td><?php
                                 if ($gv->id_bo_mon) {
                                     echo " " . $gv->bomon->name;
@@ -39,7 +41,13 @@
                                 }
                                 ?>
                             </td>
-                            <td>Chưa rõ</td>
+                            <td>
+                                @foreach($hnc as $row)
+                                    @if($gv->id_giang_vien == $row->id_giang_vien)
+                                        {{$row->name . "." }}<br>
+                                    @endif
+                                @endforeach
+                            </td>
                             <td>{{$gv->email}}</td>
                         </tr>
                     @endforeach

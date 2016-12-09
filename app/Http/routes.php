@@ -122,4 +122,11 @@ Route::group(['prefix' => 'giang-vien'], function () {
     Route::get('ho-so-ca-nhan-{id}.html', 'GiangvienController@getProfile');
     Route::get('dang-ky-huong-ngien-cuu-{id}.html', 'GiangvienController@getDangkyHcn');
     Route::post('dang-ky-huong-ngien-cuu-{id}.html', 'GiangvienController@postDangkyHcn');
+    Route::get('xoa-huong-nghien-cuu-{id}', 'GiangvienController@xoaHnc');
+    Route::get('sua-thong-tin-ca-nhan-{id}.html', 'GiangvienController@getSuathongtin');
+    Route::post('sua-thong-tin-ca-nhan-{id}.html', 'GiangvienController@postSuathongtin');
 });
+
+Route::get('cac-bo-mon-va-phong-thi-nghiem.html', 'SiteController@getDanhsachbomon');
+Route::get('bo-mon/{id}-{name}.html', 'SiteController@getBomon');
+Route::get('phong-thi-nghiem/{id}-{name}.html', 'SiteController@getPhongtn');

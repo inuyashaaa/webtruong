@@ -35,7 +35,15 @@
                             ?></p>
                         <br>
                         <p class="strong">Hướng nghiên cứu</p>
-                        <p>{{$giangvien->name}}</p>
+
+                        @foreach($hnc as $row)
+                            @if($giangvien->id_giang_vien == $row->id_giang_vien)
+                                <p>
+                                    {{$row->name . "." }}
+                                    <a href="giang-vien/xoa-huong-nghien-cuu-{{$row->id_huong_nghien_cuu}}">Xóa</a>
+                                </p>
+                            @endif
+                        @endforeach
                     </div>
                     <div class="col s6 center-align">
                         <img class="responsive-img" src="images/avata.png">
@@ -44,10 +52,12 @@
                 <p class="strong">Email</p>
                 <p>{{$giangvien->email}}</p>
                 <br>
-                <a href="#" class="waves-effect waves-light btn"><i class="material-icons left">mode_edit</i>Sửa thông
-                    tin cá
+                <a href="giang-vien/sua-thong-tin-ca-nhan-{{$giangvien->id_giang_vien}}.html"
+                   class="waves-effect waves-light btn"><i class="material-icons left">mode_edit</i>Sửa thông tin cá
                     nhân</a>
-                <a href="#" class="waves-effect waves-light btn yellow darken-1"><i class="material-icons left">playlist_add</i>Đăng ký
+                <a href="giang-vien/dang-ky-huong-ngien-cuu-{{$giangvien->id_giang_vien}}.html"
+                   class="waves-effect waves-light btn yellow darken-1"><i class="material-icons left">playlist_add</i>Đăng
+                    ký
                     hướng nghiên cứu</a>
             </div>
         </div>
