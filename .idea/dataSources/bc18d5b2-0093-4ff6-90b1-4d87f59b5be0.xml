@@ -644,7 +644,7 @@ reserved_at</ColNames>
       <RefTableName>users</RefTableName>
       <RefColNames>id</RefColNames>
       <OnUpdate>update</OnUpdate>
-      <OnDelete>no-action</OnDelete>
+      <OnDelete>delete</OnDelete>
     </foreign-key>
     <column id="160" parent="31" name="id">
       <Position>1</Position>

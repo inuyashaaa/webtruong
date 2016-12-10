@@ -14,18 +14,18 @@
     <div class="titleArea">
         <div class="wrapper">
             <div class="pageTitle">
-                <h5>Danh mục Giảng viên</h5>
-                <span>Quản lý danh sách Giảng viên</span>
+                <h5>Danh mục Sinh viên</h5>
+                <span>Quản lý danh sách Sinh viên</span>
             </div>
             <div class="horControlB menu_action">
                 <ul>
                     <li>
-                        <a href="admin/giangvien/them">
+                        <a href="admin/sinhvien/them">
                             <img src="admin_asset/images/icons/control/16/add.png">
                             <span>Thêm mới</span>
                         </a></li>
                     <li>
-                        <a href="admin/giangvien/danhsach">
+                        <a href="admin/sinhvien/danhsach">
                             <img src="admin_asset/images/icons/control/16/list.png">
                             <span>Danh sách</span>
                         </a>
@@ -38,7 +38,7 @@
     <div class="line"></div>
 
     <div class="wrapper">
-        <form class="form" id="form" action="admin/giangvien/themfile" method="post" enctype="multipart/form-data">
+        <form class="form" id="form" action="" method="post" enctype="multipart/form-data">
             <fieldset>
                 <div class="widget">
                     <div class="title">

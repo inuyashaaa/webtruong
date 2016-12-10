@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Bomon;
 use App\Giangvien;
+use App\Huongnghiencuu;
 use App\Phongtn;
 use Illuminate\Http\Request;
 
@@ -30,5 +31,11 @@ class SiteController extends Controller
         $phongtn = Phongtn::find($id);
         $giangvien = Giangvien::all();
         return view('trangchu.site.chitietphongtn', ['phongtn' => $phongtn, 'giangvien' => $giangvien]);
+    }
+
+    public function getHuongnghiencuu()
+    {
+        $hnc = Huongnghiencuu::all();
+        return view('trangchu.site.huongnc', ['hnc' => $hnc]);
     }
 }

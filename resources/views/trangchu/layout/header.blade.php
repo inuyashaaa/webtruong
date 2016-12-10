@@ -6,7 +6,7 @@
 </ul>
 
 <ul id="khvacn" class="dropdown-content">
-    <li><a href="#">Các hướng nghiên cứu</a></li>
+    <li><a href="huong-nghien-cuu.html">Các hướng nghiên cứu</a></li>
     <li class="divider"></li>
     <li><a href="#">Các đề tài và dự án</a></li>
 </ul>

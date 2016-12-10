@@ -91,6 +91,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminLogin'], function () {
         Route::post('sua/{id}', 'SinhvienController@postSua');
         Route::get('xoa/{id}', 'SinhvienController@getXoa');
         Route::get('xoahet', 'SinhvienController@getXoahet');
+        Route::get('themfiledetai', 'SinhvienController@getThemfiledetai');
+        Route::post('themfiledetai', 'SinhvienController@postThemfiledetai');
+        Route::get('danhsachlamdetai', 'SinhvienController@getDanhsachlamdetai');
+        Route::get('gui-mail-quyen-de-tai.html', 'SinhvienController@getGuimailquyendetai');
+        Route::get('huyquyendetai/{id}', 'SinhvienController@getHuyquyendetai');
+
     });
     /**
      * Tạo route group quản lý các khóa học
@@ -130,3 +136,4 @@ Route::group(['prefix' => 'giang-vien'], function () {
 Route::get('cac-bo-mon-va-phong-thi-nghiem.html', 'SiteController@getDanhsachbomon');
 Route::get('bo-mon/{id}-{name}.html', 'SiteController@getBomon');
 Route::get('phong-thi-nghiem/{id}-{name}.html', 'SiteController@getPhongtn');
+Route::get('huong-nghien-cuu.html', 'SiteController@getHuongnghiencuu');

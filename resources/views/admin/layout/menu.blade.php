@@ -58,7 +58,7 @@
             <li class="account">
                 <a href="admin/account.html" class=" exp">
                     <span>Quản lý đào tạo</span>
-                    <strong>3</strong>
+                    <strong>2</strong>
                 </a>
                 <ul class="sub">
                     <li>
@@ -73,7 +73,7 @@
             <li class="support">
                 <a href="#" class=" exp">
                     <span>Quản lý sinh viên</span>
-                    <strong>4</strong>
+                    <strong>2</strong>
                 </a>
                 <ul class="sub">
                     <li>
@@ -87,26 +87,19 @@
             </li>
             <li class="content">
 
-                <a href="admin/content.html" class=" exp">
-                    <span>Nội dung</span>
-                    <strong>4</strong>
+                <a href="#" class=" exp">
+                    <span>Quản lý đề tài</span>
+                    <strong>3</strong>
                 </a>
                 <ul class="sub">
                     <li>
-                        <a href="admin/slide.html">
-                            Slide </a>
+                        <a href="admin/sinhvien/danhsachlamdetai">Danh sách sinh viên đủ điều kiện làm đề tài</a>
                     </li>
                     <li>
-                        <a href="admin/news.html">
-                            Tin tức </a>
+                        <a href="admin/sinhvien/themfiledetai">Thêm sinh viên được làm đề tài từ file</a>
                     </li>
                     <li>
-                        <a href="admin/info.html">
-                            Trang thông tin </a>
-                    </li>
-                    <li>
-                        <a href="admin/video.html">
-                            Video </a>
+                        <a href="admin/info.html">Danh sách đề tài</a>
                     </li>
                 </ul>
             </li>
