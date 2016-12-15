@@ -99,7 +99,16 @@
                         <a href="admin/sinhvien/themfiledetai">Thêm sinh viên được làm đề tài từ file</a>
                     </li>
                     <li>
-                        <a href="admin/info.html">Danh sách đề tài</a>
+                        <a href="admin/detai/chopheduyet">Danh sách đề tài đang chờ phê duyệt</a>
+                    </li>
+                    <li>
+                        <a href="admin/detai/duocchapnhan">Danh sách đề tài đã được hội đồng phê duyệt</a>
+                    </li>
+                    <li>
+                        <a href="admin/detai/rutdangky">Danh sách đề tài xin hủy</a>
+                    </li>
+                    <li>
+                        <a href="admin/detai/xuatdanhsach">Xuất danh sách đề tài bảo vệ thành công ra file</a>
                     </li>
                 </ul>
             </li>

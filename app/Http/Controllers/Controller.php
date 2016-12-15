@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Khoa;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -16,6 +17,7 @@ class Controller extends BaseController
     public function __construct()
     {
         $this->login();
+//        $this->danhsachkhoa();
     }
 
     public function login()
@@ -24,4 +26,10 @@ class Controller extends BaseController
             view()->share('user_login', Auth::user());
         }
     }
+
+//    public function danhsachkhoa()
+//    {
+//        $khoa = Khoa::all();
+//        view()->share('danhsachkhoa', $khoa);
+//    }
 }

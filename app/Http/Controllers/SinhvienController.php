@@ -303,10 +303,55 @@ class SinhvienController extends Controller
         return view('trangchu.sinhvien.dangkydetai', ['sinhvien' => $sinhvien, 'hnc' => $hnc]);
     }
 
+    public function postDangkydetai(Request $request, $id)
+    {
+        $detai = new Detai();
+        $detai->name = $request->name;
+        $detai->name_khong_dau = changeTitle($request->name);
+        $detai->id_huong_nghien_cuu = $request->id_hnc;
+        $detai->noi_dung = $request->noi_dung;
+        $detai->id_sv = $id;
+        $detai->gv_chap_nhan = 0;
+        $detai->hd_chap_nhan = 0;
+        $detai->save();
+        return redirect("sinh-vien/quan-ly-de-tai-$id.html");
+    }
+
     public function getQuanlydetai($id)
     {
         $sinhvien = Sinhvien::find($id);
         $detai = Detai::all();
         return view('trangchu.sinhvien.detai', ['sinhvien' => $sinhvien, 'detai' => $detai]);
+    }
+
+    public function getXinhuydetai($id)
+    {
+        $detai = Detai::find($id);
+        $detai->xin_huy = 1;
+        $sv = $detai->id_sv;
+        $detai->save();
+        return redirect("sinh-vien/ho-so-ca-nhan-$sv.html");
+    }
+
+    public function getSuathongtindetai($id)
+    {
+        $detai = Detai::find($id);
+        $sinhvien = Sinhvien::find($detai->id_sv);
+        $hnc = Huongnghiencuu::all();
+        return view('trangchu.sinhvien.suadetai', ['detai' => $detai, 'hnc' => $hnc, 'sinhvien' => $sinhvien]);
+    }
+
+    public function postSuathongtindetai(Request $request, $id)
+    {
+        $detai = Detai::find($id);
+        $detai->name = $request->name;
+        $detai->name_khong_dau = changeTitle($request->name);
+        $detai->id_huong_nghien_cuu = $request->id_hnc;
+        $detai->noi_dung = $request->noi_dung;
+        $detai->gv_chap_nhan = 0;
+        $detai->hd_chap_nhan = 0;
+        $sv = $detai->id_sv;
+        $detai->save();
+        return redirect("sinh-vien/quan-ly-de-tai-$sv.html");
     }
 }

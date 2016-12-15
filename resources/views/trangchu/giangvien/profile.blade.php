@@ -59,6 +59,9 @@
                    class="waves-effect waves-light btn yellow darken-1"><i class="material-icons left">playlist_add</i>Đăng
                     ký
                     hướng nghiên cứu</a>
+
+                <a href="giang-vien/phe-duyet-de-tai-{{$giangvien->id_giang_vien}}.html"
+                   class="waves-effect waves-light btn red"><i class="material-icons left">input</i>Đề tài</a>
             </div>
         </div>
     </div>

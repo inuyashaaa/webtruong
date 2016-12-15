@@ -27,7 +27,7 @@ class Sinhvien extends Model
 
     public function detai()
     {
-        return $this->hasMany('App\Detai', 'id_sv', 'id_sinh_vien');
+        return $this->hasOne('App\Detai', 'id_sv', 'id_sinh_vien');
     }
 
     public function users()

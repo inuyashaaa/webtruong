@@ -112,6 +112,18 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminLogin'], function () {
         Route::post('sua/{id}', 'NganhhocController@postSua');
         Route::get('xoa/{id}', 'NganhhocController@getXoa');
     });
+    /**
+     * Tạo route group quản lý đề tài
+     */
+    Route::group(['prefix' => 'detai'], function () {
+        Route::get('chopheduyet', 'DetaiController@getChopheduyet');
+        Route::get('duocchapnhan', 'DetaiController@getDuocchapnhan');
+        Route::get('chapnhan/{id}', 'DetaiController@getChapnhan');
+        Route::get('xoa/{id}', 'DetaiController@getXoadetai');
+        Route::get('rutdangky', 'DetaiController@getRutdangky');
+        Route::get('guimailbaove', 'DetaiController@getGuimailbaove');
+        Route::get('xuatdanhsach', 'DetaiController@getXuatdanhsach');
+    });
 });
 
 Route::group(['prefix' => 'giang-vien'], function () {
@@ -123,6 +135,9 @@ Route::group(['prefix' => 'giang-vien'], function () {
     Route::get('xoa-huong-nghien-cuu-{id}', 'GiangvienController@xoaHnc');
     Route::get('sua-thong-tin-ca-nhan-{id}.html', 'GiangvienController@getSuathongtin');
     Route::post('sua-thong-tin-ca-nhan-{id}.html', 'GiangvienController@postSuathongtin');
+    Route::get('phe-duyet-de-tai-{id}.html', 'GiangvienController@getPheduyetdetai');
+    Route::get('de-tai-duoc-chap-nhan-{id}.html', 'GiangvienController@getChapnhandetai');
+    Route::get('de-tai-khong-duoc-chap-nhan-{id}.html', 'GiangvienController@getKhongchapnhandetai');
 });
 
 Route::post('dang-nhap', [
@@ -140,4 +155,8 @@ Route::get('huong-nghien-cuu.html', 'SiteController@getHuongnghiencuu');
 Route::get('sinh-vien/ho-so-ca-nhan-{id}.html', 'SinhvienController@getProfile');
 Route::get('sinh-vien/quan-ly-de-tai-{id}.html', 'SinhvienController@getQuanlydetai');
 Route::get('sinh-vien/dang-ly-de-tai-{id}.html', 'SinhvienController@getDangkydetai');
+Route::post('sinh-vien/dang-ly-de-tai-{id}.html', 'SinhvienController@postDangkydetai');
+Route::get('sinh-vien/xin-huy-de-tai-{id}.html', 'SinhvienController@getXinhuydetai');
+Route::get('sinh-vien/sua-thong-tin-de-tai-{id}.html', 'SinhvienController@getSuathongtindetai');
+Route::post('sinh-vien/sua-thong-tin-de-tai-{id}.html', 'SinhvienController@postSuathongtindetai');
 

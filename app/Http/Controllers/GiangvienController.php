@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Bomon;
+use App\Detai;
 use App\Giangvien;
 use App\Huongnghiencuu;
 use App\Jobs\SendReminderEmail;
@@ -305,5 +306,34 @@ class GiangvienController extends Controller
         }
         $user->save();
         return redirect("giang-vien/ho-so-ca-nhan-$id.html");
+    }
+
+    public function getPheduyetdetai($id)
+    {
+        $detai = Detai::all();
+        $giangvien = Giangvien::find($id);
+        return view('trangchu.giangvien.duyetdetai', ['detai' => $detai, 'giangvien' => $giangvien]);
+    }
+
+    public function getChapnhandetai($id)
+    {
+        $detai = Detai::find($id);
+        $id_gv = $detai->huongnghiencuu->id_giang_vien;
+        if ($detai->gv_chap_nhan != 1) {
+            $detai->gv_chap_nhan = 1;
+            $detai->save();
+        }
+        return redirect("giang-vien/phe-duyet-de-tai-$id_gv.html");
+    }
+
+    public function getKhongchapnhandetai($id)
+    {
+        $detai = Detai::find($id);
+        $id_gv = $detai->huongnghiencuu->id_giang_vien;
+        if ($detai->gv_chap_nhan == 1) {
+            $detai->gv_chap_nhan = 0;
+            $detai->save();
+        }
+        return redirect("giang-vien/phe-duyet-de-tai-$id_gv.html");
     }
 }
