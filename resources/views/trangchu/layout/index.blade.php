@@ -42,6 +42,7 @@
 </div>
 @include('trangchu.layout.footer')
 <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+<script type="text/javascript" language="javascript" src="ckeditor/ckeditor.js"></script>
 <script type="text/javascript" src="js/materialize.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>

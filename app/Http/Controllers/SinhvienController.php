@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Detai;
+use App\Huongnghiencuu;
 use App\Jobs\SendEmailDetai;
 use App\Jobs\SendReminderEmail;
 use App\Khoa;
@@ -159,6 +161,11 @@ class SinhvienController extends Controller
         return view('admin.sinhvien.sua', ['sinhvien' => $sinhvien, 'khoa' => $khoa, 'khoahoc' => $khoahoc, 'nganhhoc' => $nganhhoc]);
     }
 
+    /**
+     * @param Request $request
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function postSua(Request $request, $id)
     {
         $this->validate($request,
@@ -276,5 +283,30 @@ class SinhvienController extends Controller
         $sinhvien->quyen_de_tai = 0;
         $sinhvien->save();
         return redirect('admin/sinhvien/danhsachlamdetai')->with('message', 'Hủy quyền được làm đề tài của sinh viên thành công');
+    }
+
+    /**
+     * Các thao tác của sinh viên trên trang chủ
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function getProfile($id)
+    {
+        $sinhvien = Sinhvien::find($id);
+        return view('trangchu.sinhvien.profile', ['sinhvien' => $sinhvien]);
+    }
+
+    public function getDangkydetai($id)
+    {
+        $sinhvien = Sinhvien::find($id);
+        $hnc = Huongnghiencuu::all();
+        return view('trangchu.sinhvien.dangkydetai', ['sinhvien' => $sinhvien, 'hnc' => $hnc]);
+    }
+
+    public function getQuanlydetai($id)
+    {
+        $sinhvien = Sinhvien::find($id);
+        $detai = Detai::all();
+        return view('trangchu.sinhvien.detai', ['sinhvien' => $sinhvien, 'detai' => $detai]);
     }
 }

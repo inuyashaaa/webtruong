@@ -3,19 +3,11 @@
 Route::get('/', function () {
     return view('trangchu.trangchu');
 });
+
 // Route đăng nhâp, đăng xuất admin
 Route::get('admin', 'UserController@getAdminDangnhap');
 Route::post('admin', 'UserController@postAdminDangnhap');
 Route::get('admin/dangxuat', 'UserController@getAdminDangxuat');
-
-Route::post('dang-nhap', [
-    'as' => 'login',
-    'uses' => 'UserController@postDangnhap'
-]);
-Route::get('dang-xuat', [
-    'as' => 'logout',
-    'uses' => 'UserController@getDangxuat'
-]);
 
 //Tạo route group admin
 Route::group(['prefix' => 'admin', 'middleware' => 'adminLogin'], function () {
@@ -133,7 +125,19 @@ Route::group(['prefix' => 'giang-vien'], function () {
     Route::post('sua-thong-tin-ca-nhan-{id}.html', 'GiangvienController@postSuathongtin');
 });
 
+Route::post('dang-nhap', [
+    'as' => 'login',
+    'uses' => 'UserController@postDangnhap'
+]);
+Route::get('dang-xuat', [
+    'as' => 'logout',
+    'uses' => 'UserController@getDangxuat'
+]);
 Route::get('cac-bo-mon-va-phong-thi-nghiem.html', 'SiteController@getDanhsachbomon');
 Route::get('bo-mon/{id}-{name}.html', 'SiteController@getBomon');
 Route::get('phong-thi-nghiem/{id}-{name}.html', 'SiteController@getPhongtn');
 Route::get('huong-nghien-cuu.html', 'SiteController@getHuongnghiencuu');
+Route::get('sinh-vien/ho-so-ca-nhan-{id}.html', 'SinhvienController@getProfile');
+Route::get('sinh-vien/quan-ly-de-tai-{id}.html', 'SinhvienController@getQuanlydetai');
+Route::get('sinh-vien/dang-ly-de-tai-{id}.html', 'SinhvienController@getDangkydetai');
+
