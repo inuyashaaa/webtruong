@@ -8,6 +8,7 @@
 - Phạm Huy Mạnh
 - Hà Văn Sửu
 - Cầm Trung Thành
+- Mai Thị Dương
 
 ###Thông tin về dự án:
 - Tên: Bài tập lớn cuối kỳ.
